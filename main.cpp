@@ -30,9 +30,27 @@ double get_bmi()
     return round(bmi * 100) / 100; // round to 2 decimal places
 }
 
+void display_bmi_info(double bmi)
+{
+    std::cout << "Your bmi is " << bmi << std::endl;
+
+    if (bmi < 18.5)
+    {
+        std::cout << "You are underweight\n";
+    }
+    else if (bmi > 24.9)
+    {
+        std::cout << "You are overweight\n";
+    }
+    else
+    {
+        std::cout << "You are healthy\n";
+    }
+}
+
 int main()
 {
     std::cout << "BMI Calculator\n";
     double bmi = get_bmi();
-    std::cout << "Your bmi is " << bmi << std::endl;
+    display_bmi_info(bmi);
 }
